@@ -1,6 +1,5 @@
 from .database import Database
 from .parser import Parser
-from PyQt5.QtWidgets import QTableWidgetItem
 from widgets.application import Application
 
 
@@ -16,26 +15,30 @@ class Presenter:
         self.updateTableHandler()
 
         # TODO: each button should be have self methods for actions
-        self.view.btn_update_table.clicked.connect(self.onButtonClickedToUpdateTable)
-        self.view.btn_update_database.clicked.connect(self.onButtonClickedToUpdateDatabase)
-        self.view.btn_insert_row.clicked.connect(self.onButtonClickedToInsertRowToTable)
+        # self.view.sidebar.btn_update_table.clicked.connect(self.onButtonClickedToUpdateTable)
+        self.view.sidebar.cbox_shop.currentTextChanged.connect(self.onButtonClickedToUpdateTable)
+        self.view.sidebar.btn_update_database.clicked.connect(self.onButtonClickedToUpdateDatabase)
+        self.view.table.table_controller.btn_insert_row.clicked.connect(self.onButtonClickedToInsertRowToTable)
+
+    def test(self):
+        print('test')
 
     def onButtonClickedToUpdateTable(self):
         self.updateTableHandler()
     
     def updateTableHandler(self):
-        shop = self.view.cbox_shop.currentText().lower()
+        shop = self.view.sidebar.cbox_shop.currentText().lower()
         if shop == 'chameleon':
-            self.view.btn_insert_row.setDisabled(False)
-            self.view.btn_add_row.setDisabled(False)
+            self.view.table.table_controller.btn_insert_row.setDisabled(False)
+            self.view.table.table_controller.btn_add_row.setDisabled(False)
         else:
-            self.view.btn_insert_row.setDisabled(True)
-            self.view.btn_add_row.setDisabled(True)
+            self.view.table.table_controller.btn_insert_row.setDisabled(True)
+            self.view.table.table_controller.btn_add_row.setDisabled(True)
         params = {'shop': shop}
-        if not self.view.tedit_device_name.text() == '':
-            params['inventor'] = self.view.tedit_device_name.text().lower()
+        if not self.view.table.filterform.tedit_device_name.text() == '':
+            params['inventor'] = self.view.table.filterform.tedit_device_name.text().lower()
         rows = self.model.getRowsByFilter(params)
-        self.view.updateTable(rows)
+        self.view.table.updateTable(rows)
     
     def onButtonClickedToUpdateDatabase(self):
         self.updateDatabaseHandler()
@@ -46,7 +49,7 @@ class Presenter:
         self.updateTableHandler()
 
     def onButtonClickedToInsertRowToTable(self):
-        row = self.view.getRowItems()
+        row = self.view.table.getRowItems()
         if len(row) == 0:
             return
         self.insertRowToDatabaseHandler(row)
