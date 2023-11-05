@@ -1,0 +1,398 @@
+#itlcb-wrapper.itlcb-opened .itlcb-input-block {
+    position: relative;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags-list {
+    position: absolute;
+    top: 51px;
+    margin-top: 0;
+    left: 0;
+    width: 384px;
+    max-height: 270px;
+    overflow: auto;
+    overflow-x: hidden;
+    z-index: 9;
+    padding-left: 0;
+    background: white;
+    box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.25);
+    display: none;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags-list.active {
+    display: block;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags {
+    height: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag {
+    position: relative;
+    left: 7px;
+    padding: 8px;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag:hover {
+    background-color: #f7f8f8;
+    cursor: pointer;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flag {
+    display: inline-block;
+    position: relative;
+    width: 18px;
+    height: 12px;
+    background: url(images/flags42.png) no-repeat;
+    background-size: 100% 49494%;
+    vertical-align: middle;
+    box-sizing: content-box;
+    border: solid 1px #a4aaad;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag:before {
+    content: attr(data-before);
+    display: block;
+    visibility: hidden;
+    min-width: 40px;
+    height: 13px;
+    padding: 10px;
+    position: absolute;
+    bottom: 37px;
+    left: -3px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    color: white;
+    white-space: nowrap;
+    background: black;
+    border-radius: 3px;
+    z-index: 11;
+    opacity: 0;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    top: 7px;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 5px)) rotate(45deg);
+    background-color: black;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    z-index: 10;
+    opacity: 0;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag:hover:before, #itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag:hover:after {
+    transition-delay: 0.5s;
+    visibility: visible;
+    opacity: 1;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag.disabled:after,
+#itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag.disabled:before {
+    visibility: visible;
+    opacity: 1;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-list-element {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-list-element.active {
+    background: url(images/icons/tip-medium.svg) no-repeat 98% center/auto;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-list-element:hover {
+    cursor: pointer;
+    background-color: #f7f8f8;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-list-element .itlcb-name {
+    display: inline-block;
+    padding: 0 5px 0 10px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    color: #000000;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-list-element .code {
+    display: inline-block;
+    padding: 0 5px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    color: grey;
+}
+#itlcb-wrapper.itlcb-opened .itlcb-phone-input {
+    margin-left: 10px;
+    width: auto;
+}
+#itlcb-wrapper.itlcb-opened .message-country-disabled {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+    padding-left: 45px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+#itlcb-wrapper.itlcb-opened .message-country-disabled.show {
+    visibility: visible;
+    opacity: 1;
+}
+@media screen and (max-width: 420px) {
+    #itlcb-wrapper.itlcb-opened .itlcb-flags-list {
+        width: 320px;
+    }
+
+    #itlcb-wrapper.itlcb-opened .itlcb-flags .itlcb-selected-flag {
+        left: 18px;
+    }
+}
+/* flags */
+#itlcb-wrapper.itlcb-opened .flag-CH,
+#itlcb-wrapper.itlcb-opened .itlcb-flag.np {box-shadow: none!important}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.dz {background-position:center 0.2287%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ao {background-position:center 0.4524%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bj {background-position:center 0.6721%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bw {background-position:center 0.8958%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bf {background-position:center 1.1162%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bi {background-position:center 1.3379%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cm {background-position:center 1.5589%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cv {background-position:center 1.7805%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cf {background-position:center 2.0047%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.td {background-position:center 2.2247%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cd {background-position:left 2.4467%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.dj {background-position:left 2.6674%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.eg {background-position:center 2.8931%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gq {background-position:center 3.1125%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.er {background-position:left 3.3325%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.et {background-position:center 3.5542%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ga {background-position:center 3.7759%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gm {background-position:center 4.0015%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gh {background-position:center 4.2229%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gn {background-position:center 4.441%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gw {background-position:left 4.66663%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ci {background-position:center 4.8844%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ke {background-position:center 5.1061%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ls {background-position:center 5.3298%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lr {background-position:left 5.5495%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ly {background-position:center 5.7712%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mg {background-position:center 5.994%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mw {background-position:center 6.2156%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ml {background-position:center 6.4363%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mr {background-position:center 6.658%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mu {background-position:center 6.8805%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ma {background-position:center 7.1038%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mz {background-position:left 7.3231%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.na {background-position:left 7.5448%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ne {background-position:center 7.7661%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ng {background-position:center 7.98937%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cg {background-position:center 8.2099%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.rw {background-position:right 8.4316%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.st {background-position:center 8.6533%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sn {background-position:center 8.875%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sc {background-position:left 9.0967%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sl {background-position:center 9.32237%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.so {background-position:center 9.5426%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.za {background-position:left 9.7628%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ss {background-position:left 9.9845%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sd {background-position:center 10.2052%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sr {background-position:center 10.4269%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sz {background-position:center 10.6486%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tg {background-position:left 10.8703%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tn {background-position:center 11.0945%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ug {background-position:center 11.3135%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tz {background-position:center 11.5354%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.eh {background-position:center 11.7593%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ye {background-position:center 11.9799%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.zm {background-position:center 12.2005%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.zw {background-position:left 12.4222%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ag {background-position:center 12.644%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ar {background-position:center 12.8664%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bs {background-position:left 13.0873%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bb {background-position:center 13.309%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bz {background-position:center 13.5307%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bo {background-position:center 13.7524%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.br {background-position:center 13.9741%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ca {background-position:center 14.1958%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cl {background-position:left 14.4175%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.co {background-position:left 14.6415%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.km {background-position:center 14.8609%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cr {background-position:center 15.0826%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cu {background-position:left 15.306%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.dm {background-position:center 15.528%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.do {background-position:center 15.7496%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ec {background-position:center 15.9694%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sv {background-position:center 16.1911%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gd {background-position:center 16.4128%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gt {background-position:center 16.6345%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gy {background-position:center 16.8562%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ht {background-position:center 17.0779%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.hn {background-position:center 17.2996%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.jm {background-position:center 17.5213%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mx {background-position:center 17.743%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ni {background-position:center 17.968%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pa {background-position:center 18.1864%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.py {background-position:center 18.4081%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pe {background-position:center 18.6298%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kn {background-position:center 18.8515%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lc {background-position:center 19.0732%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.vc {background-position:center 19.2987%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tt {background-position:center 19.518%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.us {background-position:center 19.7383%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.uy {background-position:left 19.96%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ve {background-position:center 20.1817%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.af {background-position:center 20.4034%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.az {background-position:center 20.6241%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bd {background-position:center 20.8468%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bt {background-position:center 21.0685%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bn {background-position:center 21.2902%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kh {background-position:center 21.5119%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cn {background-position:left 21.7336%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ge {background-position:center 21.9553%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.in {background-position:center 22.177%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.id {background-position:center 22.4002%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.jp {background-position:center 22.6204%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kz {background-position:center 22.8421%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.la {background-position:center 23.0638%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.my {background-position:center 23.2855%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mv {background-position:center 23.5072%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mn {background-position:left 23.732%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mm {background-position:center 23.9506%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.np {background-position:left 24.1723%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kp {background-position:left 24.394%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pw {background-position:center 24.6157%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pg {background-position:center 24.8374%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ph {background-position:left 25.0591%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sg {background-position:left 25.279%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kr {background-position:center 25.5025%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lk {background-position:right 25.7242%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tw {background-position:left 25.9459%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tj {background-position:center 26.1676%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.th {background-position:center 26.3885%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tl {background-position:left 26.611%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tm {background-position:center 26.8327%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.vn {background-position:center 27.0544%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.al {background-position:center 27.2761%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ad {background-position:center 27.4978%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.am {background-position:center 27.7195%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.at {background-position:center 27.9412%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.by {background-position:left 28.1615%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.be {background-position:center 28.3846%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ba {background-position:center 28.6063%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bg {background-position:center 28.829%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.hr {background-position:center 29.0497%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cy {background-position:center 29.2714%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.cz {background-position:left 29.4931%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.dk {background-position:center 29.7148%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ee {background-position:center 29.9365%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.fi {background-position:center 30.1582%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.fr {background-position:center 30.3799%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.de {background-position:center 30.6016%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gr {background-position:left 30.8233%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.hu {background-position:center 31.045%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.is {background-position:center 31.2667%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ie {background-position:center 31.4884%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.it {background-position:center 31.7101%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lv {background-position:center 31.9318%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.li {background-position:left 32.1535%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lt {background-position:center 32.3752%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lu {background-position:center 32.5969%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mt {background-position:left 32.8186%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.md {background-position:center 33.0403%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mc {background-position:center 33.25975%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.me {background-position:center 33.4837%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.nl {background-position:center 33.7054%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mk {background-position:center 33.9271%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.no {background-position:center 34.1488%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pl {background-position:center 34.3705%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pt {background-position:center 34.5922%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ro {background-position:center 34.8139%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ru {background-position:center 35.0356%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sm {background-position:center 35.2555%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.rs {background-position:center 35.479%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sk {background-position:center 35.7007%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.si {background-position:center 35.9224%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.es {background-position:left 36.1441%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.se {background-position:center 36.3658%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ch {background-position:center 36.5875%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tr {background-position:center 36.8092%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ua {background-position:center 37.0309%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.gb {background-position:center 37.2526%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.va {background-position:right 37.4743%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.bh {background-position:center 37.696%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ir {background-position:center 37.9177%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.iq {background-position:center 38.1394%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.il {background-position:center 38.3611%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kw {background-position:left 38.5828%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.jo {background-position:left 38.8045%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.kg {background-position:center 39.0262%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.lb {background-position:center 39.2479%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.om {background-position:left 39.4696%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.pk {background-position:center 39.6913%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ps {background-position:center 39.913%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.qa {background-position:center 40.1347%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sa {background-position:center 40.3564%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sy {background-position:center 40.5781%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ae {background-position:center 40.7998%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.uz {background-position:left 41.0215%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.au {background-position:center 41.2432%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.fj {background-position:center 41.4649%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ki {background-position:center 41.6866%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.mh {background-position:left 41.9083%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.fm {background-position:center 42.13%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.nz {background-position:center 42.3517%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.nr {background-position:left 42.5734%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.ws {background-position:left 42.7951%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.sb {background-position:left 43.0168%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.to {background-position:left 43.2385%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.tv {background-position:center 43.4602%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.vu {background-position:left 43.6819%}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.f-sm {width: 18px;height: 11px}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.f-md {width: 27px;height: 17px}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.f-lg {width: 42px;height: 27px}
+#itlcb-wrapper.itlcb-opened .itlcb-flag.f-xl {width: 60px;height: 37px}
+/* flags end */
+#itlcb-wrapper.itlcb-opened .itlcb-flag.disabled::before {
+    content: "\2716";
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 18px;
+    min-height: 12px;
+    background-color: #49565c;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 8px;
+    font-weight: bolder;
+}
+
+#itlcb-wrapper.itlcb-opened .itlcb-flag.not-found::before {
+    content: '?';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-width: 18px;
+    min-height: 12px;
+    background-color: #49565c;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+#itlcb-wrapper.itlcb-opened #itlcb-flag-selected-wrapper.not-found::before,
+#itlcb-wrapper.itlcb-opened #itlcb-flag-selected-wrapper.not-found::after {
+    visibility: hidden;
+}
+
+#itlcb-step2[style*="visibility: hidden"] #itlcb-flag-selected-wrapper:before,
+#itlcb-step2[style*="visibility: hidden"] #itlcb-flag-selected-wrapper:after {
+    visibility: hidden;
+}
