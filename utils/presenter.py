@@ -46,13 +46,9 @@ class Presenter:
         self.updateTableHandler()
 
     def onButtonClickedToInsertRowToTable(self):
-        rowCount = self.view.table.rowCount()
-        row = []
-        for i in range(self.view.table.columnCount()):
-            item_text = QTableWidgetItem.text(QTableWidgetItem(self.view.table.item(rowCount - 1, i)))
-            if item_text == '':
-                return # except error of empty  
-            row.append(item_text)
+        row = self.view.getRowItems()
+        if len(row) == 0:
+            return
         self.insertRowToDatabaseHandler(row)
 
     def insertRowToDatabaseHandler(self, row):

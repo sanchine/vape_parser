@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout,
                              QPushButton, QTableWidget, QTableWidgetItem,
                              QHeaderView, QComboBox, QLabel, QLineEdit)
+from strings import errors
 
 
 class Application(QWidget):
@@ -23,7 +24,7 @@ class Application(QWidget):
         insert_layout = QHBoxLayout()
 
         self.label_shop = QLabel('Shop')
-        self.label_app_error = QLabel('Error: undefined')
+        self.label_app_error = QLabel(errors.NOT_ERROR)
 
         self.cbox_shop = QComboBox()
         self.cbox_shop.addItems(['Chameleon', 'Zenmod', 'VapeLuxe'])
@@ -77,6 +78,7 @@ class Application(QWidget):
             self.table.setRowCount(rowCount + 1)
     
     def updateTable(self, rows):
+        self.setErrorLabel(errors.NOT_ERROR)
         self.table.setRowCount(0)
         
         if len(rows) == 0:
@@ -89,3 +91,17 @@ class Application(QWidget):
             self.table.setItem(i, 1, QTableWidgetItem(val['inventor']))
             self.table.setItem(i, 2, QTableWidgetItem(val['model']))
             self.table.setItem(i, 3, QTableWidgetItem(str(val['price'])))
+
+    def getRowItems(self):
+        rowCount = self.table.rowCount()
+        row = []
+        for i in range(self.table.columnCount()):
+            item_text = QTableWidgetItem.text(QTableWidgetItem(self.table.item(rowCount - 1, i)))
+            if item_text == '':
+                self.setErrorLabel(errors.ROW_ITEMS_EMPTY_ERROR)
+                return []
+            row.append(item_text)
+        return row
+
+    def setErrorLabel(self, error):
+        self.label_app_error.setText(error)
