@@ -28,6 +28,8 @@ class FilterForm(QWidget):
         self.tedit_device_type = QLineEdit()
         self.tedit_device_type.setMaximumHeight(lineHeight)
 
+        self.btn_apply_filter = QPushButton('Apply filter')
+
         self.label_price_range = QLabel("Price range")
         self.tedit_device_price_range_from = QLineEdit()
         self.tedit_device_price_range_from.setPlaceholderText('From')
@@ -48,6 +50,8 @@ class FilterForm(QWidget):
         self.layout.addWidget(self.label_price_range, 0, 2)
         self.layout.addWidget(self.tedit_device_price_range_from, 1, 2)
         self.layout.addWidget(self.tedit_device_price_range_to, 2, 2)
+
+        self.layout.addWidget(self.btn_apply_filter)
 
         self.setLayout(self.layout)
         self.show()

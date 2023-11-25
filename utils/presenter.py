@@ -16,7 +16,7 @@ class Presenter:
 
         # TODO: each button should be have self methods for actions
         # self.view.sidebar.btn_update_table.clicked.connect(self.onButtonClickedToUpdateTable)
-        self.view.sidebar.cbox_shop.currentTextChanged.connect(self.onButtonClickedToUpdateTable)
+        self.view.table.filterform.btn_apply_filter.clicked.connect(self.onButtonClickedToUpdateTable)
         self.view.sidebar.btn_update_database.clicked.connect(self.onButtonClickedToUpdateDatabase)
         self.view.table.table_controller.btn_insert_row.clicked.connect(self.onButtonClickedToInsertRowToTable)
 
@@ -35,8 +35,12 @@ class Presenter:
             self.view.table.table_controller.btn_insert_row.setDisabled(True)
             self.view.table.table_controller.btn_add_row.setDisabled(True)
         params = {'shop': shop}
+        if not self.view.table.filterform.tedit_device_type.text() == '':
+            params['type'] = self.view.table.filterform.tedit_device_type.text().lower()
         if not self.view.table.filterform.tedit_device_name.text() == '':
             params['inventor'] = self.view.table.filterform.tedit_device_name.text().lower()
+        if not self.view.table.filterform.tedit_device_model.text() == '':
+            params['model'] = self.view.table.filterform.tedit_device_model.text().lower()
         rows = self.model.getRowsByFilter(params)
         self.view.table.updateTable(rows)
     

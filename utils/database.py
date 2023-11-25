@@ -112,6 +112,9 @@ class Database:
             print(params)
             query_string += f"""WHERE """
             for k, v in params.items():
+                if k == 'model':
+                    query_string += f"""{k} LIKE '%{v}%' and """
+                    continue
                 query_string += f"""{k} = '{v}' and """
 
         query_string = query_string[:-5] + ';'
